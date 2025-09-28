@@ -1,0 +1,12 @@
+# render.yaml
+services:
+  - type: web
+    name: easyocr-server
+    env: python
+    region: frankfurt # ou oregon, etc.
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    envVars:
+      - key: PORT
+        value: 10000
